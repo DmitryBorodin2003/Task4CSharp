@@ -1,0 +1,27 @@
+﻿<Window x:Class="Task4CSharp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="630"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Width="180" Height="36">
+                <Button Content="Добавить переход" Click="CreateNewCrosswalkButton" Width="180"/>
+            </StackPanel>
+            <DataGrid x:Name="crosswalkDataGrid" ItemsSource="{Binding Crosswalks}" AutoGenerateColumns="False" Margin="0,10,0,0" Width="577" ColumnWidth="*">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID перехода" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Машины проехали" Binding="{Binding CarsPassed}"/>
+                    <DataGridTextColumn Header="Пешеходы прошли" Binding="{Binding PedestriansCrossed}"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>
